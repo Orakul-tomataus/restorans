@@ -5,6 +5,7 @@ import { useAuth } from './hooks/auth.hook'
 import 'materialize-css'
 import { AuthContext } from './context/AuthContext';
 import { Navbar } from './components/Navbar';
+import { Footbar } from './components/Footbar';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <div className="container">
           {routes}
         </div>
+        {isAuthenticated && <Footbar/>}
       </Router>
     </AuthContext.Provider>
   );
