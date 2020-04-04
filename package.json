@@ -1,26 +1,24 @@
 {
-  "name": "restorans",
-  "version": "0.0.1",
-  "description": "",
-  "main": "app.js",
+  "name": "root",
+  "version": "1.0.0",
+  "description": "baisic restorans projekt",
+  "main": "index.js",
   "scripts": {
-    "start": "node app.js",
-    "server": "nodemon app.js",
+    "server": "npm run dev --prefix server",
     "client": "npm run start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Orakul-tomataus/restorans.git"
+  },
   "author": "bogdanfedorov@gmail.com",
   "license": "ISC",
-  "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "config": "^3.3.0",
-    "express": "^4.17.1",
-    "express-validator": "^6.4.0",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.9.4"
+  "bugs": {
+    "url": "https://github.com/Orakul-tomataus/restorans/issues"
   },
+  "homepage": "https://github.com/Orakul-tomataus/restorans#readme",
   "devDependencies": {
-    "concurrently": "^5.1.0",
-    "nodemon": "^2.0.2"
+    "concurrently": "^5.1.0"
   }
 }
