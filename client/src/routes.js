@@ -4,6 +4,7 @@ import {Switch, Route, Redirect} from 'react-router-dom'
 import { DetailPage } from './pages/DetailPage'
 import { AuthPage } from './pages/AuthPage'
 import { MenuPage } from './pages/MenuPage'
+import { OrderPage} from './pages/OrderPage'
 
 export const useRoutes = isAuthenticated => {
     if(isAuthenticated){
@@ -11,6 +12,9 @@ export const useRoutes = isAuthenticated => {
             <Switch>
                 <Route path="/menu" exact>
                     <MenuPage/>
+                </Route>
+                <Route path="/order" exact>
+                    <OrderPage/>
                 </Route>
                 <Route path='/detail/:id'>
                     <DetailPage/>
