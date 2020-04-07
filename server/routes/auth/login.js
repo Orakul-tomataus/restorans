@@ -6,7 +6,6 @@ module.exports = loginUser;
 async function loginUser (body) {
   const {email, password} = body;
   const user = await User.findOne({email});
-
   if (!user) {
     throw new Error('User not found');
   }

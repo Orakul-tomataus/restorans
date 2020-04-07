@@ -1,10 +1,9 @@
 const {Schema, Types ,model} = require('mongoose')
 
 const schema = new Schema({
-    id: {type: Types.ObjectId},
-    name: {type: String},
-    price: {type: Number},
-    photoURL: {type: String}
+    name: {type: String, required: true, unique: true,auto:true},
+    price: {type: Number, required: true},
+    photoURL: {type: String, required: true}
 })
 
 module.exports = model('Food',schema) 

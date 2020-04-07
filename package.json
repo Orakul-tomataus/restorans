@@ -6,7 +6,10 @@
   "scripts": {
     "server": "npm run dev --prefix server",
     "client": "npm run start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "startDB": "sudo systemctl start mongod",
+    "statDB": "sudo systemctl status mongod",
+    "stopDB": "sudo systemctl stop mongod"
   },
   "repository": {
     "type": "git",
