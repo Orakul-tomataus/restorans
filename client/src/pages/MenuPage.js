@@ -4,11 +4,11 @@ import { ProductCard } from '../components/ProductCard';
 import { OrderShower } from '../components/OrderShower'
 
 export const MenuPage = () => {
-    const {finalPrice,foods,addFood} = useOrder();
+    const {product,finalPrice,addProducts} = useOrder();
     var make;
-    if(foods){
-        make = foods.map((item,id)=>{
-        return (<ProductCard prod={item} onClic={addFood} key={id}/>);
+    if(product){
+        make = product.map((item,id)=>{
+        return (<ProductCard prod={item} onClic={addProducts} key={id}/>);
     })
     }
     return(
