@@ -1,30 +1,38 @@
-import React from 'react'
-import {BrowserRouter as Router} from 'react-router-dom'
-import { useRoutes } from './routes';
-import { useAuth } from './hooks/auth.hook'
-import 'materialize-css'
-import { AuthContext } from './context/AuthContext';
-import { Navbar } from './components/Navbar';
-import { Footbar } from './components/Footbar';
+import React, { Component } from "react";
+import "./App.css";
+import Header from "./Components/Header/Header.js";
+import ProductList from "./Components/ProductList/ProductList";
+import { Switch, Route } from "react-router-dom";
+import CartDialog from "./Components/CartDialog/CartDialog";
+import Details from "./Components/Details/Details";
+import Order from "./Components/Order/Order";
+import ProtectedRoute from "./Components/ProtectedRoute/ProtectedRoute";
+import Auth from './Components/Auth/Auth'
 
-
-function App() {
-  const {login,logout,token,userId} = useAuth()
-  const isAuthenticated = !!token
-  const routes = useRoutes(isAuthenticated)
-  return (
-    <AuthContext.Provider value={{
-      token,login,logout,userId
-    }}>
-      <Router>
-        {isAuthenticated && <Navbar/>}
-        <div className="container">
-          {routes}
+class App extends Component {
+  render() {
+    return (
+      <div className="app">
+        <Header />
+        <div className="app-body">
+          <div className="content">
+            <CartDialog />
+            <Switch>
+              <Route path="/" exact component={ProductList} />
+              <Route path="/details/:id" component={Details} />
+              <Route path="/login" component={Auth} />
+              <ProtectedRoute path="/order" component={Order} />
+              <Route
+                component={() => (
+                  <div style={{ padding: 20 }}>Page not found</div>
+                )}
+              />
+            </Switch>
+          </div>
         </div>
-        {isAuthenticated && <Footbar/>}
-      </Router>
-    </AuthContext.Provider>
-  );
+      </div>
+    );
+  }
 }
 
 export default App;

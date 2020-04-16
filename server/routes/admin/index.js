@@ -3,16 +3,16 @@ const router = Router();
 
 module.exports = router;
 
-router.post(
-  '/addProduct'
+router.put(
+  '/Product'
   , perform('addProduct'));
 
-router.post(
-  '/removeProduct',
+router.delete(
+  '/Product',
   perform('removeProduct'));
 
-router.post(
-    '/getProducts',
+router.get(
+    '/products',
     perform('getProducts'));
   
 
