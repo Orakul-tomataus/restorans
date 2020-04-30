@@ -3,6 +3,8 @@ import { addItemInCart } from "../../Redux/Actions";
 import Api from "../../Api";
 import { connect } from "react-redux";
 import Price from '../Price/Price'
+import './style.css'
+import Loading from "../../Loading";
 class ConnectedDetails extends Component {
   constructor(props) {
     super(props);
@@ -20,8 +22,7 @@ class ConnectedDetails extends Component {
   async fetchProductAndRelatedItems(productId) {
     this.setState({ itemLoading: true });
 
-    let item = await Api.getItemUsingID(productId);
-
+    let item = await Api.getItemByID(productId);
     let relatedItems = await Api.searchItems({
       category: item.category,
     });
@@ -40,9 +41,7 @@ class ConnectedDetails extends Component {
     if (this.props.match.params.id !== prevProps.match.params.id) {
       this.fetchProductAndRelatedItems(this.props.match.params.id);
     }
-
   }
-
 
   componentDidMount() {
     this.isCompMounted = true;
@@ -53,21 +52,9 @@ class ConnectedDetails extends Component {
     this.isCompMounted = false;
   }
 
-
-
   render() {
     if (this.state.itemLoading) {
-      return <div class="preloader-wrapper big active">
-      <div class="spinner-layer spinner-blue-only">
-        <div class="circle-clipper left">
-          <div class="circle"></div>
-        </div><div class="gap-patch">
-          <div class="circle"></div>
-        </div><div class="circle-clipper right">
-          <div class="circle"></div>
-        </div>
-      </div>
-    </div>
+      return <Loading/>
     }
 
     if (!this.state.item) {
@@ -75,47 +62,24 @@ class ConnectedDetails extends Component {
     }
 
     return (
-      <div style={{ padding: 10 }}>
-        <div
-          style={{
-            marginBottom: 20,
-            marginTop: 10,
-            fontSize: 22
-          }}
-        >
+      <div className="connectedDetails">
+        <div className="name">
           {this.state.item.name}
         </div>
-        <div style={{ display: "flex" }}>
-          <img src={this.state.item.imageUrls[0]} alt="" width={250} height={250}
-            style={{
-              border: "1px solid lightgray",
-              borderRadius: "5px",
-              objectFit: "cover"
-            }} />
-          <div
-            style={{
-              flex: 1,
-              marginLeft: 20,
-              display: "flex",
-              flexDirection: "column"
-            }}
-          >
-
-            <div style={{
-              fontSize: 16,
-
-            }}>
+        <div className="product">
+          <img src={this.state.item.imageUrls[0]} alt="" width={250} height={250}/>
+          <div className="property">
+            <div className="price">
               Price: <Price value={this.state.item.price}/>
             </div>
             {this.state.item.popular && (
-              <div style={{ fontSize: 14, marginTop: 5, color: "#228B22" }}>
+              <div className="popular">
                 (Popular product)
               </div>
             )}
             <input 
               type="number" 
               value={this.state.quantity}
-              style={{ marginTop: 20, marginBottom: 10, width: 70 }}
               label="Quantity"
               inputProps={{ min: 1, max: 10, step: 1 }}
               onChange={e => {
@@ -140,23 +104,11 @@ class ConnectedDetails extends Component {
         </div>
 
         {/* Product description */}
-        <div
-          style={{
-            marginTop: 20,
-            marginBottom: 20,
-            fontSize: 22
-          }}
-        >
-          Product Description
-        </div>
-        <div
-          style={{
-            maxHeight: 200,
-            fontSize: 13,
-            overflow: "auto"
-          }}
-        >
-          {this.state.item.description ? this.state.item.description : "Not available"}
+        <div className="description">
+          <h1>Product Description</h1>
+          <text>
+            {this.state.item.description ? this.state.item.description : "Not available"}
+          </text>
         </div>
       </div >
     );

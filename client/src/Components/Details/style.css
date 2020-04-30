@@ -1,0 +1,43 @@
+.connectedDetails {
+    padding: 10px;
+}
+.connectedDetails .name{
+    margin-bottom: 20px;
+    margin-top: 10px;
+    font-size: 22px;
+}
+.connectedDetails .product{
+    display: flex;
+}
+.connectedDetails .product img{
+    border: 1px solid lightgray;
+}
+.connectedDetails .product .property{
+    flex: 1;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.connectedDetails .product .property .price{
+    font-size: 16px;
+}
+.connectedDetails .product .property .popular{
+    font-size: 14px;
+    margin-top: 5;
+    color: lime;
+}
+.connectedDetails .product .property input{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    width: 70px;
+}
+.connectedDetails .description h1{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+.connectedDetails .description text{
+    max-height: 200px;
+    font-size: 13px;
+    overflow: auto;
+}

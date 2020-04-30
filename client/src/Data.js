@@ -1,7 +1,7 @@
 // Our product database.
 const sampleProducts = [
   {
-    id: 1,
+    id: '1',
     name: "Deer tartare with rowanberry",
     category: "Winter Appetizers",
     price: 6500,
@@ -13,20 +13,20 @@ const sampleProducts = [
     ]
   },
   {
-    id: 2,
+    id: '2',
     name: "Beef carpaccio with boletus mayonnaise",
     category: "Winter Appetizers",
     price: 5400,
     description:
       "",
 
-    popular: false,
+    popular: true,
     imageUrls: [
       ""
     ]
   },
   {
-    id: 3,
+    id: '3',
     name: "Smoked eel with beetroot",
     category: "Winter Appetizers",
     price: 6200,
@@ -37,7 +37,7 @@ const sampleProducts = [
     ]
   },
   {
-    id: 4,
+    id: '4',
     name: "Trout with crayfish and roast celery ",
     category: "Main Dishes",
     price: 8900,
@@ -49,7 +49,7 @@ const sampleProducts = [
     ]
   },
   {
-    id: 5,
+    id: '5',
     name: "Halibut with black rice and vinaigrette sauce",
     category: "Main Dishes",
     price: 95,
@@ -62,7 +62,7 @@ const sampleProducts = [
     ]
   },
   {
-    id: 7,
+    id: '7',
     name: "Quail with morels",
     category: "Main Dishes",
     price: 9200,
@@ -73,7 +73,7 @@ const sampleProducts = [
     ]
   },
   {
-    id: 8,
+    id: '8',
     name: "Ribeye  Steak",
     category: "Special Steaks Selection",
     price: 17500,
@@ -84,7 +84,7 @@ const sampleProducts = [
     ]
   },
   {
-    id: 9,
+    id: '9',
     name: "Potato puree served with chanterelles and chive",
     category: "Additives",
     price: 1800,
@@ -95,7 +95,7 @@ const sampleProducts = [
     ]
   },
   {
-    id: 10,
+    id: '10',
     name: "Baked vegetables with buckwheat honey",
     category: "Additives",
     price: 1700,
@@ -106,7 +106,7 @@ const sampleProducts = [
     ]
   },
   {
-    id: 11,
+    id: '11',
     name: "Cheesecake with seaberry",
     category: "Desserts",
     price: 2900,
@@ -118,7 +118,7 @@ const sampleProducts = [
     ]
   },
   {
-    id: 12,
+    id: '12',
     name: "Plums with Sabayone cream",
     category: "Desserts",
     price: 2700,
