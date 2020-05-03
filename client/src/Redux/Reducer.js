@@ -6,7 +6,7 @@ const initialState = {
   showMenu: true,
   checkedOutItems: [],
   token:null,
-  isAuthenticated:false
+  isAuthenticated:true
 };
 
 const rootReducer = (state = initialState, action) => {

@@ -1,16 +1,12 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
-import {
-  showCartDlg,
-  logout
-} from "../../Redux/Actions";
+import { showCartDlg } from "../../Redux/Actions";
 import { categories } from "../../Data";
 
 const mapStateToProps = state => {
   return {
-    nrOfItemsInCard: state.cartItems.length,
-    isAuthenticated: state.isAuthenticated
+    nrOfItemsInCard: state.cartItems.length
   };
 };
 
@@ -52,31 +48,6 @@ class ConnectedHeader extends Component {
           <div className="right"
           style={{marginRight:10}}>
             <div className='row'>
-              <div className='col '>
-                    {this.props.isAuthenticated ? (
-                      <div className='row'>
-                        <div className='col'>
-                          <i className="material-icons">face</i>
-                        </div>
-                        <div className='col'>
-                          <div className='btn red'
-                          >
-                            Log out
-                            </div>
-                        </div>
-                      </div>
-                    ) : (
-                      <div
-                        className='btn'
-                        style={{ marginRight: 20 }}
-                        onClick={() => {
-                          this.props.history.push("/login");
-                        }}
-                      >
-                        Log in
-                      </div>
-                      )}
-              </div>
               <div className='col '>
               <div
               className="btn"
