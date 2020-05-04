@@ -69,6 +69,7 @@ const rootReducer = (state = initialState, action) => {
     }
     case CONSTANTS.ADD_ORDER_PROPS: {
       state.orderData = action.payload
+      /*send order{cart,phone,addres} on server*/
       console.log({cart:state.cartItems,phone:state.orderData.phone,addres:state.orderData.addres})
       return state
     }
