@@ -31,3 +31,7 @@ export const setLoggedInUser = user => ({
 export const logout = () => ({
   type: CONSTANTS.LOGOUT,
 });
+export const addOrderProps = orderData => ({
+  type: CONSTANTS.ADD_ORDER_PROPS,
+  payload: orderData
+})

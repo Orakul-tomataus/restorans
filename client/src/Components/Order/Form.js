@@ -1,7 +1,11 @@
 import React, { useState } from 'react'
-function Form(){
-    const [adres,setAdres] = useState("")
+import { useDispatch } from 'react-redux'
+import { addOrderProps } from '../../Redux/Actions'
+
+function Form () {
+    const [addres,setAddres] = useState("")
     const [phone,setPhone] = useState("")
+    const dispatch = useDispatch()
     return(
         <div className="form">        
             <form className="col s12">
@@ -12,9 +16,9 @@ function Form(){
                         type="text" 
                         className="validate" 
                         placeholder="Adress"
-                        value={adres}
+                        value={addres}
                         onChange={(e)=>{
-                            setAdres(e.target.value)
+                            setAddres(e.target.value)
                         }}
                         />
                     </div>
@@ -35,8 +39,8 @@ function Form(){
                     </div>
                 </div>
             </form>
+            <div className="btn" onClick={()=>dispatch(addOrderProps({addres,phone}))} >Submit</div>
         </div>
         )
-
 }
 export default Form

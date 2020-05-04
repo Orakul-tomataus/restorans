@@ -6,7 +6,10 @@ const initialState = {
   showMenu: true,
   checkedOutItems: [],
   token:null,
-  isAuthenticated:true
+  isAuthenticated:true,
+  orderData:{
+    addres:"",
+    phone:""}
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -63,6 +66,11 @@ const rootReducer = (state = initialState, action) => {
       }
 
       return state;
+    }
+    case CONSTANTS.ADD_ORDER_PROPS: {
+      state.orderData = action.payload
+      console.log({cart:state.cartItems,phone:state.orderData.phone,addres:state.orderData.addres})
+      return state
     }
     default:
       return state;
