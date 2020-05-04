@@ -2,7 +2,7 @@ import React ,{ useState }from "react";
 import Cart from "../Cart/Cart";
 import Form from "./Form";
 import './style.css'
-import Progres from "../../Progres";
+import Progres from "../Progres";
 
 function Order(){
     const [etap,setEtap] = useState(1)
