@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { addOrderProps } from '../../Redux/Actions'
+import { addOrderProps, sendOrder } from '../../Redux/Actions'
 
 function Form () {
     const [addres,setAddres] = useState("")
@@ -40,6 +40,7 @@ function Form () {
                 </div>
             </form>
             <div className="btn" onClick={()=>dispatch(addOrderProps({addres,phone}))} >Submit</div>
+            <div className="btn" onClick={()=>dispatch(sendOrder())} >Send</div>
         </div>
         )
 }

@@ -14,7 +14,8 @@ process
 app.use(cors());
 app.use(express.json({extensions: true}));
 app.use('/api/auth', require('./routes/auth'));
-app.use('/api/admin',require('./routes/admin'))
+app.use('/api/admin',require('./routes/admin'));
+app.use('/api/order',require('./routes/orders'));
 
 app.use('/', (req, res, next) => {
   const {authorization = ''} = req.headers;

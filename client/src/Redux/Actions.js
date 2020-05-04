@@ -35,3 +35,7 @@ export const addOrderProps = orderData => ({
   type: CONSTANTS.ADD_ORDER_PROPS,
   payload: orderData
 })
+
+export const sendOrder = _ => ({
+  type: CONSTANTS.SEND_ORDER,
+})

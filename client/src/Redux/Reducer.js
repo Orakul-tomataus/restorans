@@ -69,13 +69,14 @@ const rootReducer = (state = initialState, action) => {
     }
     case CONSTANTS.ADD_ORDER_PROPS: {
       state.orderData = action.payload
-      /*send order{cart,phone,addres} on server*/
-      console.log({cart:state.cartItems,phone:state.orderData.phone,addres:state.orderData.addres})
-      return state
+      let body = {cart:state.cartItems.map((x)=>{return{id:x.id,quantity:x.quantity}}),phone:state.orderData.phone,addres:state.orderData.addres}
+      body = JSON.stringify(body)
+      console.log(body)
+      fetch('/api/order/api',{method:'POST',body,headers:{'Content-Type':'application/json'}})
+      return state;
     }
     default:
       return state;
   }
 };
-
 export default rootReducer;
