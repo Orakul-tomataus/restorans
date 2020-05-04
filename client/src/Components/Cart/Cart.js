@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import CartRow from "./CartRow";
 import Price from '../Price/Price';
-import { Link } from "react-router-dom";
 
 const mapStateToProps = state => {
   return { items: state.cartItems };
@@ -49,12 +48,8 @@ class ConnectedCartDialog extends Component {
             >
               Total Price: <Price value={totalPrice}/>
             </div>
-            <Link to={`/order`} className="btn green"
-              disabled={totalPrice === 0}>
-              Checkout
-            </Link>
-            
           </div>
+          {this.props.children}
       </div>
     );
   }

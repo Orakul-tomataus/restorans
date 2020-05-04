@@ -1,0 +1,12 @@
+.order{
+    margin-left: 100px;
+    margin-top: 100px;
+    margin-right: 100px;
+}
+
+.order .etaps .etap{
+     margin-left: 50px;
+ }
+ .order .etapConteiner{
+     margin-top: 50px;
+ }
