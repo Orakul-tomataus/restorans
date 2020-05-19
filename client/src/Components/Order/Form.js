@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { addOrderProps, sendOrder } from '../../Redux/Actions'
+import { addOrderProps } from '../../Redux/Actions'
 
-function Form () {
+function Form (props) {
     const [addres,setAddres] = useState("")
     const [phone,setPhone] = useState("")
     const dispatch = useDispatch()
@@ -19,6 +19,7 @@ function Form () {
                         value={addres}
                         onChange={(e)=>{
                             setAddres(e.target.value)
+                            dispatch(addOrderProps({addres,phone}))
                         }}
                         />
                     </div>
@@ -34,13 +35,15 @@ function Form () {
                         value={phone}
                         onChange={(e)=>{
                             setPhone(e.target.value)
+                            dispatch(addOrderProps({addres,phone}))
                         }}
                         />
                     </div>
                 </div>
+                <div className="row">
+                    {(addres && phone)?props.children:""}
+                </div>
             </form>
-            <div className="btn" onClick={()=>dispatch(addOrderProps({addres,phone}))} >Submit</div>
-            <div className="btn" onClick={()=>dispatch(sendOrder())} >Send</div>
         </div>
         )
 }

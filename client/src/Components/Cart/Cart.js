@@ -49,7 +49,7 @@ class ConnectedCartDialog extends Component {
               Total Price: <Price value={totalPrice}/>
             </div>
           </div>
-          {this.props.children}
+          {(this.props.items.length)?this.props.children:""}
       </div>
     );
   }

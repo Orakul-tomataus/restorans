@@ -4,10 +4,7 @@ function Progres(){
 
     return (
     <div className="Progres">
-        <div className="btn-floating"></div>-->
-        <div className="btn-floating"></div>-->
-        <div className="btn-floating"></div>-->
-        <div className="btn-floating"></div>
+       ALL ok wait for the call
     </div>
     )
 }

@@ -7,5 +7,5 @@ export const SET_CHECKEDOUT_ITEMS = "SET_CHECKEDOUT_ITEMS";
 export const SET_LOGGED_IN_USER = "SET_LOGGED_IN_USER";
 export const LOGOUT = "LOGOUT";
 export const ADD_ORDER_PROPS = "ADD_ORDER_PROPS";
-export const SEND_ORDER = "SEND_ORDER"
+export const SEND_ORDER = "SEND_ORDER";
 
