@@ -14,6 +14,9 @@ router.delete(
 router.get(
     '/products',
     perform('getProducts'));
+router.get(
+    '/categories',
+    perform('getCategories'));
   
 
 function perform (action) {

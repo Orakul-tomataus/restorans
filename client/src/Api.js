@@ -19,7 +19,7 @@ const map = new Map([
   /*name = undefined || string*/ 
   const NameFilter = (w) => ({...w,data: applyFilter(w.data, map.get(w.name) || (x => (x.name.toLowerCase().includes(w.name.toLowerCase()))))})
   /*id = undefined || int */
-  const IdFilter = (w) => (applyFilter(w.data, map.get(w.id) || (x=>x.id === w.id))[0])
+  const IdFilter = (w) => (applyFilter(w.data, map.get(w._id) || (x=>x._id === w._id))[0])
   /*sort = undefined || "lh" || "hl"*/
   const PriceSorter = (w)=> ({...w,data:w.data.sort(map.get(w.sort)) || w}) 
 

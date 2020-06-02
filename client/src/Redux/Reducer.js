@@ -15,7 +15,7 @@ const initialState = {
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case CONSTANTS.ADD_ITEM_IN_CART: {
-      let index = state.cartItems.findIndex(x => x.id === action.payload.id);
+      let index = state.cartItems.findIndex(x => x._id === action.payload._id);
 
       if (index !== -1) {
         let cloneCartItems = [...state.cartItems];
@@ -34,7 +34,7 @@ const rootReducer = (state = initialState, action) => {
     case CONSTANTS.DELETE_CART_ITEM:
       return {
         ...state,
-        cartItems: state.cartItems.filter(x => x.id !== action.payload)
+        cartItems: state.cartItems.filter(x => x._id !== action.payload)
       };
     case CONSTANTS.TOGGLE_MENU:
       return { ...state, showMenu: !state.showMenu };
@@ -53,7 +53,7 @@ const rootReducer = (state = initialState, action) => {
     case CONSTANTS.SET_CHECKEDOUT_ITEMS:
       return { ...state, checkedOutItems: action.payload };
     case CONSTANTS.UPDATE_CART_ITEM_QUANTITY: {
-      let index = state.cartItems.findIndex(x => x.id === action.payload.id);
+      let index = state.cartItems.findIndex(x => x._id === action.payload._id);
 
       if (index !== -1) {
         let cloneCartItems = [...state.cartItems];
@@ -73,7 +73,7 @@ const rootReducer = (state = initialState, action) => {
     }
     case CONSTANTS.SEND_ORDER: {
         let body = {
-          cart:state.cartItems.map((x)=>{return{id:x.id,quantity:x.quantity}}),
+          cart:state.cartItems.map((x)=>{return{_id:x._id,quantity:x.quantity}}),
           addres:state.orderData.addres,
           phone:state.orderData.phone
           

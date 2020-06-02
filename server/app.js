@@ -28,9 +28,6 @@ app.use('/', (req, res, next) => {
     next();
   });
 });
-
-//app.use('/api/orders', require('./routes/orders'));
-
 start(PORT);
 const teardown = [];
 

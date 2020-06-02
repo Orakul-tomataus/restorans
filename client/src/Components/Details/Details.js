@@ -31,7 +31,7 @@ class ConnectedDetails extends Component {
       this.setState({
         item,
         quantity: 1,
-        relatedItems: relatedItems.data.filter(x => x.id !== item.id),
+        relatedItems: relatedItems.data.filter(x => x._id !== item._id),
         itemLoading: false,
       });
     }
@@ -81,7 +81,7 @@ class ConnectedDetails extends Component {
               type="number" 
               value={this.state.quantity}
               label="Quantity"
-              inputProps={{ min: 1, max: 10, step: 1 }}
+              inputprops={{ min: 1, max: 10, step: 1 }}
               onChange={e => {
                 this.setState({ quantity: parseInt(e.target.value) });
               }}
@@ -98,7 +98,7 @@ class ConnectedDetails extends Component {
                 );
               }}
             >
-              Add to Cart <i class="material-icons">add_shopping_cart</i>
+              Add to Cart <i className="material-icons">add_shopping_cart</i>
             </div>
           </div>
         </div>

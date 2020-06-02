@@ -12,7 +12,7 @@ const CartRow = props => {
   return (
     <tr>
       <td>
-        <Link to={`/details/${item.id}`}>
+        <Link to={`/details/${item._id}`}>
           <div
             onClick={() => {
               props.dispatch(showCartDlg(false));
@@ -32,7 +32,7 @@ const CartRow = props => {
             if (quantity < 0) return;
             props.dispatch(
               updateCartItemQnt({
-                id: item.id,
+                _id: item._id,
                 quantity
               })
             );
@@ -42,7 +42,7 @@ const CartRow = props => {
         <div 
           className="btn red"
           onClick={() => {
-            props.dispatch(deleteCartItem(item.id));
+            props.dispatch(deleteCartItem(item._id));
           }}
         >
           Delete

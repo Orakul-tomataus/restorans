@@ -10,7 +10,7 @@ class ConnectedItem extends Component {
       <div 
         className="card col s3"
         onClick={() => {
-          this.props.history.push("/details/" + this.props.item.id);
+          this.props.history.push("/details/" + this.props.item._id);
         }}
       >
         <div className="card-image">
