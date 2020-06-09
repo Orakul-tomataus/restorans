@@ -4,8 +4,11 @@ const router = Router();
 module.exports = router;
 
 router.post(
-    '/api',
+    '/order',
     perform('addOrder'));
+router.get(
+    '/order',
+    perform('getOrders'));
   
 
 function perform (action) {
